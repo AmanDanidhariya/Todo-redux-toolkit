@@ -14,10 +14,11 @@ const TaskList = () => {
 
         {todos.map((todo) => {
           return (
-            <li key={todo.id} className="flex p-2 bg-gray-100 m-2 rounded-lg items-center justify-between">
-              <div>
-                <p className="text-2xl">dlkwj</p>
-              </div>
+            <li
+              key={todo.id}
+              className="flex p-2 bg-gray-100 m-2 rounded-lg items-center justify-between"
+            >
+              <div className={`text-2xl ${todo.completed ? 'line-through	' :""}`}>{todo.text}</div>
               <div className="flex text-2xl items-center">
                 <input
                   type="checkbox"

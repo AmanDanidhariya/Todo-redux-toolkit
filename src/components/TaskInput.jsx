@@ -1,12 +1,42 @@
-import React from 'react'
+import React, { useState } from "react";
+import { addTodo } from "../features/todoSlice";
+import { useDispatch } from "react-redux";
 
 const TaskInput = () => {
-  return (
-    <div className='flex flex-col gap-y-4'>
-      <input type='text' name='text'/>
-      <button>Add</button>
-    </div>
-  )
-}
+  const [enteredValue, setEnteredValue] = useState("");
+  const dispatch = useDispatch();
 
-export default TaskInput
+  const handleChange = (e) => {
+    setEnteredValue(e.target.value);
+  };
+
+  const addTodoHandler = (e) => {
+    e.preventDefault();
+    dispatch(addTodo(enteredValue))
+    console.log(enteredValue);
+    setEnteredValue("");
+  };
+
+  return (
+    <form
+      onSubmit={addTodoHandler}
+      className="flex flex-col items-center  gap-y-4 "
+    >
+      <input
+        type="text"
+        name="text"
+        value={enteredValue}
+        onChange={handleChange}
+        className="py-2 px-1  rounded-xl"
+      />
+      <button
+        type="submit"
+        className="py-2  bg-red-400 rounded-xl w-[40%] text-white hover:bg-white hover:text-red-400 duration-200 font-bold"
+      >
+        Add
+      </button>
+    </form>
+  );
+};
+
+export default TaskInput;
