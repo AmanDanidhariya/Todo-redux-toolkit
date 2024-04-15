@@ -1,4 +1,4 @@
-import { MdDelete } from "react-icons/md";
+import { AiFillDelete } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteTodo, toggleTodo } from "../features/todoSlice";
 
@@ -32,7 +32,7 @@ const TaskList = () => {
                     }}
                   />
                   <span>
-                    <MdDelete
+                    <AiFillDelete
                       className="text-red-400 hover:text-red-700 hover:cursor-pointer"
                       onClick={() => dispatch(deleteTodo(todo.id))}
                     />
