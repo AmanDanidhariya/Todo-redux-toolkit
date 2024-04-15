@@ -12,6 +12,7 @@ export const todoSlice = createSlice({
   initialState,
   reducers: {
     addTodo: (state, action) => {
+      //add new todo object to todos array
       const addTodo = {
         id: nanoid(),
         text: action.payload,
@@ -19,15 +20,17 @@ export const todoSlice = createSlice({
       };
       state.todos.push(addTodo);
     },
-    deleteTodo:(state, action)=>{
-        state.todos = state.todos.filter((todo)=>todo.id !== action.payload)
+    deleteTodo: (state, action) => {
+      //return all todos which not match with action.payload id
+      state.todos = state.todos.filter((todo) => todo.id !== action.payload);
     },
-    toggleTodo:(state, action)=>{
-        const findTodo= state.todos.find(todo=>todo.id === action.payload)
-        if(findTodo){
-            findTodo.completed = !findTodo.completed;
-        }
-    }
+    toggleTodo: (state, action) => {
+      //find todo from array using id for toggling
+      const findTodo = state.todos.find((todo) => todo.id === action.payload);
+      if (findTodo) {
+        findTodo.completed = !findTodo.completed;
+      }
+    },
   },
 });
 

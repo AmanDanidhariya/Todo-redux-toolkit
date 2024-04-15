@@ -4,7 +4,7 @@ import TaskList from "./components/TaskList";
 
 function App() {
   return (
-    <div className="flex flex-col justify-center items-center  h-max gap-y-7 p-11">
+    <div className="flex flex-col justify-center items-center h-max gap-y-7 p-11">
       <TaskInput />
       <TaskList />
     </div>

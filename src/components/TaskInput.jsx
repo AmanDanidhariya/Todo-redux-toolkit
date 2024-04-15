@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { addTodo } from "../features/todoSlice";
 import { useDispatch } from "react-redux";
 
@@ -10,17 +10,17 @@ const TaskInput = () => {
     setEnteredValue(e.target.value);
   };
 
+  //add todo to main array
   const addTodoHandler = (e) => {
     e.preventDefault();
-    dispatch(addTodo(enteredValue))
-    console.log(enteredValue);
+    if (enteredValue) dispatch(addTodo(enteredValue));
     setEnteredValue("");
   };
 
   return (
     <form
       onSubmit={addTodoHandler}
-      className="flex flex-col items-center  gap-y-4 "
+      className="flex flex-col items-center gap-y-4 "
     >
       <input
         type="text"
