@@ -1,8 +1,27 @@
-# React + Vite
+# TODO Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The TODO application is for creating todo lists. Users can add and delete tasks. They can also track whether tasks are completed or not.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Add/Delete Tasks**: Quickly add new tasks to your list, or remove tasks you no longer need.
+
+- **Task Status**: Mark tasks as complete or incomplete to track your progress.
+
+## Installation
+
+To run the Todo List App locally, follow these steps:
+
+## 1.  Clone the repository:
+
+    git clone https://github.com/AmanDanidhariya/Todo-redux-toolkit
+
+    cd todo_application(redux-toolkit)
+
+## 2. To install dependencies, run the following command:
+
+    npm install
+
+## 3. To start the development server, use the following command:
+
+    npm run dev
